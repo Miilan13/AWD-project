@@ -1,2 +1,2 @@
-# AWD-project
-simple website to learn HTML and CSS
+scientific calculator
+using HTML,CSS,Bootstrap5 and Javascript
