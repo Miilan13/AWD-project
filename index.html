@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Scientific Calculator</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <style>
+        /* Add your custom styles here if needed */
+    </style>
+</head>
+
+<body>
+
+    <!-- NAVBAR -->
+    <nav class="sticky-top bg-body-tertiary mt-2">
+        <div class="container-fluid text-center shadow-sm">
+            <h1 class="text-center">Scientific Calculator</h1>
+        </div>
+    </nav>
+
+    <div class="row">
+        <div class="col-12 offset-md-3 col-md-6">
+            <div class="card">
+                <div class="card-body">
+                    <input id="calc-display" readonly class="form-control form-control-lg text-end" type="text"
+                        aria-label=".form-control-lg example">
+
+                    <div class="row gx-2">
+
+                        <!-- BUTTONS -->
+
+                        <div class="col-3">
+                            <button type="button" class="btn btn-light w-100 mt-4 border"> ( </button>
+                        </div>
+                        <div class="col-3">
+                            <button type="button" class="btn btn-light w-100 mt-4 border"> ) </button>
+                        </div>
+                        <div class="col-3">
+                            <button type="button" class="btn btn-light w-100 mt-4 border operator"> % </button>
+                        </div>
+                        <div class="col-3">
+                            <button type="button" class="btn btn-light w-100 mt-4 border"> AC </button>
+                        </div>
+
+                        <div class="col-3">
+                            <button type="button" class="btn btn-light w-100 mt-3 border"> 7 </button>
+                        </div>
+                        <div class="col-3">
+                            <button type="button" class="btn btn-light w-100 mt-3 border"> 8 </button>
+                        </div>
+                        <div class="col-3">
+                            <button type="button" class="btn btn-light w-100 mt-3 border"> 9 </button>
+                        </div>
+                        <div class="col-3">
+                            <button type="button" class="btn btn-light w-100 mt-3 border operator"> ÷ </button>
+                        </div>
+
+                        <div class="col-3">
+                            <button type="button" class="btn btn-light w-100 mt-3 border"> 4 </button>
+                        </div>
+                        <div class="col-3">
+                            <button type="button" class="btn btn-light w-100 mt-3 border"> 5 </button>
+                        </div>
+                        <div class="col-3">
+                            <button type="button" class="btn btn-light w-100 mt-3 border"> 6 </button>
+                        </div>
+                        <div class="col-3">
+                            <button type="button" class="btn btn-light w-100 mt-3 border operator"> × </button>
+                        </div>
+
+                        <div class="col-3">
+                            <button type="button" class="btn btn-light w-100 mt-3 border"> 1 </button>
+                        </div>
+                        <div class="col-3">
+                            <button type="button" class="btn btn-light w-100 mt-3 border"> 2 </button>
+                        </div>
+                        <div class="col-3">
+                            <button type="button" class="btn btn-light w-100 mt-3 border"> 3 </button>
+                        </div>
+                        <div class="col-3">
+                            <button type="button" class="btn btn-light w-100 mt-3 border operator"> - </button>
+                        </div>
+
+                        <div class="col-3">
+                            <button type="button" class="btn btn-light w-100 mt-3 border"> 0 </button>
+                        </div>
+                        <div class="col-3">
+                            <button type="button" class="btn btn-light w-100 mt-3 border"> . </button>
+                        </div>
+                        <div class="col-3">
+                            <button type="button" class="btn btn-primary w-100 mt-3 border equal"> = </button>
+                        </div>
+                        <div class="col-3">
+                            <button type="button" class="btn btn-light w-100 mt-3 border operator"> + </button>
+                        </div>
+
+                        <div class="col-3">
+                            <button type="button" class="btn btn-light w-100 mt-3 border function"> sin </button>
+                        </div>
+                        <div class="col-3">
+                            <button type="button" class="btn btn-light w-100 mt-3 border function"> ln </button>
+                        </div>
+                        <div class="col-3">
+                            <button type="button" class="btn btn-light w-100 mt-3 border"> π </button>
+                        </div>
+                        <div class="col-3">
+                            <button type="button" class="btn btn-light w-100 mt-3 border function"> cos </button>
+                        </div>
+
+                        <div class="col-3">
+                            <button type="button" class="btn btn-light w-100 mt-3 border function"> log </button>
+                        </div>
+                        <div class="col-3">
+                            <button type="button" class="btn btn-light w-100 mt-3 border"> e </button>
+                        </div>
+                        <div class="col-3">
+                            <button type="button" class="btn btn-light w-100 mt-3 border function"> tan </button>
+                        </div>
+                        <div class="col-3">
+                            <button type="button" class="btn btn-light w-100 mt-3 border function"> √ </button>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
+        crossorigin="anonymous"></script>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            const display = document.getElementById("calc-display");
+            const buttons = document.getElementsByClassName("btn");
+
+            let currentValue = "";
+            let operatorSelected = false;
+
+            function calculateResult() {
+                try {
+                    const convertedValue = currentValue
+                        .replace("×", "*")
+                        .replace("÷", "/")
+                        .replace("%", "*0.01")
+                        .replace('sin', 'Math.sin')
+                        .replace('cos', 'Math.cos')
+                        .replace('π', 'Math.PI')
+                        .replace('ln', 'Math.log')
+                        .replace('log', 'Math.log10')
+                        .replace('e', 'Math.E')
+                        .replace('tan', 'Math.tan')
+                        .replace('√', 'Math.sqrt');
+                    const result = eval(convertedValue);
+                    display.value = result.toString();
+                    currentValue = result.toString();
+                    operatorSelected = false;
+                } catch (error) {
+                    console.error(error);
+                    currentValue = "ERROR";
+                    display.value = currentValue;
+                }
+            }
+
+            function handleButtonClick(value) {
+                if (value === "AC") {
+                    currentValue = "";
+                } else if (value === "=") {
+                    calculateResult();
+                } else {
+                    if (operatorSelected && "+-*/".includes(value)) {
+                        currentValue = currentValue.slice(0, -1); // Replace the last operator
+                    }
+                    currentValue += value;
+                    operatorSelected = "+-*/".includes(value);
+                }
+                display.value = currentValue;
+            }
+
+            for (let i = 0; i < buttons.length; i++) {
+                const button = buttons[i];
+                button.addEventListener('click', function () {
+                    const value = button.innerText;
+                    handleButtonClick(value);
+                })
+            }
+
+            // Add event listener for keyboard input
+            document.addEventListener('keydown', function (event) {
+                const key = event.key;
+                if (key.match(/[0-9\.\+\-\*\/]|Enter/)) {
+                    event.preventDefault();
+                    handleButtonClick(key === 'Enter' ? '=' : key);
+                }
+            });
+        });
+    </script>
+</body>
+
+</html>
